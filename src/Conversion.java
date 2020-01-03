@@ -1,12 +1,5 @@
 public class Conversion {
-    public String userInput;
-
-    public Conversion(String userInput){
-        this.userInput = userInput;
-    }
-
     public void convertToCharacters(String userInput){
-        this.userInput = userInput;
         System.out.println("Decrypted message: ");
         char answer[] = userInput.toCharArray();
         for (char chr:answer){

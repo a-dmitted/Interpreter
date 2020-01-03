@@ -1,15 +1,11 @@
 import java.util.Scanner;
 
 public class InterpreterDriver {
-    public Conversion originatingContent = null;
+    public Conversion originatingContent = new Conversion();
     public Expression theExpression = null;
-
-    public InterpreterDriver(Conversion content){
-        originatingContent = content;
-    }
+    
 
     public void interpret(String tString){
-        Scanner in = new Scanner(System.in);
         theExpression = new MapIntToCharacters(tString);
         theExpression.interpret(originatingContent);
     }
@@ -20,8 +16,7 @@ public class InterpreterDriver {
         Scanner in = new Scanner(System.in);
         String userInput = in.nextLine();
         System.out.println("Your code is: " + userInput);
-        Conversion conversion = new Conversion(userInput);
-        InterpreterDriver userCode = new InterpreterDriver(conversion);
+        InterpreterDriver userCode = new InterpreterDriver();
         userCode.interpret(userInput);
         System.out.println("\n\n");
     }
